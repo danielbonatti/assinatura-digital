@@ -18,15 +18,6 @@
             body{
                 padding: 15px;
             }
-
-            #note{
-                position:absolute;
-                left:50px;
-                top:35px;
-                padding:0px;
-                margin:0px;
-                cursor:default;
-            }
         </style>
     </head>
     <body>
@@ -36,9 +27,8 @@
             <!--importar csrf, proteção do laravel, para requisição do formulário-->
             @csrf
             <div id="signature-pad">
-                <div style="border:solid 1px teal; width:360px;height:110px;padding:3px;position:relative;">
-                    <div id="note" onclick="my_function();" class="text-muted">A assinatura deve estar dentro da caixa</div>
-                    <canvas id="the_canvas" width="350px" height="100px"></canvas>
+                <div class="border rounded" style="width:384px;height:184px;padding:3px;position:relative;">
+                    <canvas id="the_canvas" width="374px" height="174px"></canvas>
                 </div>
                 <div class="mt-2">
                     <input type="hidden" id="signature" name="signature">
@@ -59,13 +49,12 @@
             signaturePad = new SignaturePad(canvas);
 
             clearButton.addEventListener("click", function (event) {
-                document.getElementById("note").innerHTML="A assinatura deve estar dentro da caixa";
                 signaturePad.clear();
             });
 
             savePNGButton.addEventListener("click", function (event){
                 if (signaturePad.isEmpty()){
-                    alert("Please provide signature first.");
+                    alert("Forneça a assinatura primeiro.");
                     event.preventDefault();
                 }else{
                     var canvas  = document.getElementById("the_canvas");
