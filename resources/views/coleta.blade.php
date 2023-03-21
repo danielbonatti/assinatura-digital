@@ -37,7 +37,7 @@
             @csrf
             <div id="signature-pad">
                 <div style="border:solid 1px teal; width:360px;height:110px;padding:3px;position:relative;">
-                    <div id="note" onmouseover="my_function();">A assinatura deve estar dentro da caixa</div>
+                    <div id="note" onclick="my_function();" class="text-muted">A assinatura deve estar dentro da caixa</div>
                     <canvas id="the_canvas" width="350px" height="100px"></canvas>
                 </div>
                 <div class="mt-2">
@@ -59,7 +59,7 @@
             signaturePad = new SignaturePad(canvas);
 
             clearButton.addEventListener("click", function (event) {
-                document.getElementById("note").innerHTML="The signature should be inside box";
+                document.getElementById("note").innerHTML="A assinatura deve estar dentro da caixa";
                 signaturePad.clear();
             });
 
