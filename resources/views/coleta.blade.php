@@ -18,6 +18,14 @@
             body{
                 padding: 15px;
             }
+            #note{
+                position:absolute;
+                left:50px;
+                top:155px;
+                padding:0px;
+                margin:0px;
+                cursor:default;
+            }
         </style>
     </head>
     <body>
@@ -27,13 +35,14 @@
             <!--importar csrf, proteção do laravel, para requisição do formulário-->
             @csrf
             <div id="signature-pad">
-                <div class="border rounded" style="width:384px;height:184px;padding:3px;position:relative;">
-                    <canvas id="the_canvas" width="374px" height="174px"></canvas>
+                <div style="border:solid 2px #C0C0C0; width:364px;height:184px;padding:3px;position:relative;" class="rounded">
+                    <div id="note" onmouseover="my_function();" class="text-muted"><!--A assinatura deve estar dentro da caixa--></div>
+                    <canvas id="the_canvas" width="354px" height="174px"></canvas>
                 </div>
-                <div class="mt-2">
+                <div style="margin:10px;">
                     <input type="hidden" id="signature" name="signature">
-                    <button type="button" id="clear_btn" class="btn btn-danger" data-action="clear"><span class="glyphicon glyphicon-remove"></span> Limpar</button>
-                    <button type="submit" id="save_btn" class="btn btn-primary" data-action="save-png"><span class="glyphicon glyphicon-ok"></span> Salvar como PNG</button>
+                    <button type="button" id="clear_btn" class="btn btn-danger" data-action="clear"><span class="glyphicon glyphicon-remove"></span> Clear</button>
+                    <button type="submit" id="save_btn" class="btn btn-primary" data-action="save-png"><span class="glyphicon glyphicon-ok"></span> Save as PNG</button>
                 </div>
             </div>
         <form>
@@ -49,6 +58,7 @@
             signaturePad = new SignaturePad(canvas);
 
             clearButton.addEventListener("click", function (event) {
+                /*document.getElementById("note").innerHTML="A assinatura deve estar dentro da caixa";*/
                 signaturePad.clear();
             });
 
@@ -63,9 +73,9 @@
                 }
             });
 
-            function my_function(){
-                ementById("note").innerHTML="";
-            }
+            /*function my_function(){
+                document.getElementById("note").innerHTML="";
+            }*/
         </script>
     </body>
 </html>

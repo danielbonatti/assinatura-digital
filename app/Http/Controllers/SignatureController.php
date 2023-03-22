@@ -24,8 +24,10 @@ class SignatureController extends Controller
         $nama_file="signature_".date("his").".png";
         file_put_contents($path.$nama_file, file_get_contents($sig_string));
         if(file_exists($path.$nama_file)){
-            echo "<p>Ficheiro Assinatura - ".$nama_file."</p>";
-            echo "<p style='border:solid 1px teal;width:384px;height:184px;'><img src='".$path.$nama_file."'></p>";
+            echo "<p>Ficheiro Assinatura - ".$nama_file."</p>
+                <p style='border:solid 1px teal;width:384px;height:184px;'><img src='".$path.$nama_file."'></p>
+                <button onclick='history.go(-1);'>Voltar </button>";
+
         }
     }
 }
