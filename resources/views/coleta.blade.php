@@ -35,14 +35,14 @@
             <!--importar csrf, proteção do laravel, para requisição do formulário-->
             @csrf
             <div id="signature-pad">
-                <div style="border:solid 2px #C0C0C0; width:364px;height:184px;padding:3px;position:relative;" class="rounded">
+                <div style="border:solid 2px #C0C0C0; width:354px;height:184px;padding:3px;position:relative;" class="rounded">
                     <div id="note" onmouseover="my_function();" class="text-muted"><!--A assinatura deve estar dentro da caixa--></div>
-                    <canvas id="the_canvas" width="354px" height="174px"></canvas>
+                    <canvas id="the_canvas" width="344px" height="174px"></canvas>
                 </div>
-                <div style="margin:10px;">
+                <div class="mt-2">
                     <input type="hidden" id="signature" name="signature">
-                    <button type="button" id="clear_btn" class="btn btn-danger" data-action="clear"><span class="glyphicon glyphicon-remove"></span> Clear</button>
-                    <button type="submit" id="save_btn" class="btn btn-primary" data-action="save-png"><span class="glyphicon glyphicon-ok"></span> Save as PNG</button>
+                    <button type="button" id="clear_btn" class="btn btn-danger" data-action="clear"><span class="glyphicon glyphicon-remove"></span> Limpar</button>
+                    <button type="submit" id="save_btn" class="btn btn-primary" data-action="save-png"><span class="glyphicon glyphicon-ok"></span> Salvar como PNG</button>
                 </div>
             </div>
         <form>
